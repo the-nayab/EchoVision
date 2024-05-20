@@ -1,0 +1,17 @@
+<% layout('/layouts/boilerplate.ejs') %>
+<section class="container contact-us">
+  <h1>You are on the feedback page.</h1>
+  <form action="/feedback" method="POST" id="contactForm" class="mt-5">
+    
+    <div class="mb-3">
+      <label for="feedback" class="form-label">To record your feedback, click anywhere on the screen. Your feedback will be autosubmitted</label>
+      <textarea class="form-control" id="feedback" name="feedback" rows="3" required><%= formData.feedback || '' %></textarea>
+    </div>
+    <!-- Hidden submit button -->
+    <button type="submit" id="submitButton" style="display: none;"></button>
+  </form>
+</section>
+
+<!-- Scripts -->
+<script src="/js/speechToText.js"></script>
+<script src="/js/typed.js"></script>
